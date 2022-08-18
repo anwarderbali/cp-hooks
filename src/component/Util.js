@@ -31,9 +31,5 @@
         rating: "6.7",
     },
     ]
-    
-const addToMovies=(data)=>{
-    movies.push(data)
-    console.log(movies)
-}
-export  {movies,  addToMovies};
+
+export  {movies};

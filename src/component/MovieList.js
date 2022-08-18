@@ -1,16 +1,20 @@
-import React, { useState,useEffect } from "react";
+import React from "react";
 import MovieCard from "./MovieCard";
 import "./List.css";
 import Addmovie from "./Addmovie";
 import {movies} from "./Util";
-const MovieList = (props) => {
-  const [moviesListe,setMoviesListe]=useState(movies)
-  const addMovie=(data)=>{setMoviesListe([...moviesListe,data])}
+const MovieList = ({movies , setMoviesListe}) => {
   
-  const card = moviesListe.map((props, id) => {
+  
+  const addMovie = (data) => {
+    setMoviesListe([...movies, data]);
+  }
+  
+  const card = movies.map((movie, id) => {
+    
     return (
       <div>
-        <MovieCard props={props} key={id} />
+        <MovieCard movie={movie} key={id} />
       </div>
     );
   });

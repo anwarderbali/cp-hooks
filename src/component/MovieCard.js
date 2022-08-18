@@ -1,13 +1,22 @@
 import React from "react";
 import "./MovieCard.css";
-const MovieCard = ({ props }) => {
+import StarRatingComponent from 'react-star-rating-component';
+
+
+const MovieCard = ({ movie }) => {
     return (
         <div className="movie-card-content">
-            <img src={props.posterURL} alt="hehe!!" style={{ height: "170px" , width:"330px"}} />
+            <img src={movie.posterURL} alt="hehe!!" style={{ height: "170px" , width:"330px"}} />
             <br />
-            {props.title} <br />
-            {props.description} <br />
-            {props.rating} <br />
+            {movie.title} <br />
+            {movie.description} <br />
+            <StarRatingComponent
+                name='filter' 
+                starCount={10}
+                emptyStarColor={String}
+                value={movie.rating}
+    
+/><br />
         </div>
     );
 };
