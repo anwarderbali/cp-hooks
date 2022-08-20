@@ -11,7 +11,7 @@ function Filter({ search, handleRating }) {
             />
             <StarRatingComponent
                 name="filter"
-                starCount={5}
+                starCount={10}
                 emptyStarColor={String}
                 onStarClick={(value) => handleRating(value)}
                 editing={true}

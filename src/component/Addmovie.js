@@ -9,7 +9,7 @@ const Addmovie = ({ addData }) => {
     const descRef = useRef();
     const ratingRef = useRef();
 
-    const Addingmovie = (event) => {
+    const SubmitMovie = (event) => {
         event.preventDefault();
         let movieObject = { title: titleRef.current.value, description: descRef.current.value, posterURL: posterRef.current.value, rating: ratingRef.current.value };
         addData(movieObject)
@@ -18,11 +18,11 @@ const Addmovie = ({ addData }) => {
     return (
 
         <div>
-            <form onSubmit={Addingmovie}>
-                poster<input type="text" ref={posterRef} /> <br />
+            <form onSubmit={SubmitMovie}>
+                poster<input type="url" ref={posterRef} /> <br />
                 title:<input type="text" ref={titleRef} /><br />
-                description<input type="text" ref={descRef} /><br />
-                <input type="text" ref={ratingRef} /><br />
+                description<textarea cols="20" rows="2"ref={descRef}></textarea><br />
+                rating:<input type="text" ref={ratingRef} /><br />
                 <button type="submit">add</button>
             </form>
         </div>

@@ -4,7 +4,7 @@ import "./List.css";
 import Addmovie from "./Addmovie";
 const MovieList = ({moviesListe , setMoviesListe}) => {
 
-  const addMovie = (data) => {
+  const addNewMovie = (data) => {
     setMoviesListe([...moviesListe, data]);
 }
 
@@ -16,7 +16,7 @@ const MovieList = ({moviesListe , setMoviesListe}) => {
     );
 });
   return <div className="display">{card}<br/>
-  <Addmovie addData={addMovie}/>
+  <Addmovie addData={addNewMovie}/>
   </div>;
 };
 export default MovieList;
