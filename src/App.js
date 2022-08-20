@@ -53,7 +53,7 @@ function App() {
   return (
     <div className="App">
       <Filter search={search} handleRating={handleRating} />
-      <MovieList movies={moviesListe.filter(el=>el.title.toLowerCase().includes(keyWord.toLowerCase().trim())&& el.rating>=rating)} setMoviesListe={setMoviesListe}/> 
+      <MovieList moviesListe={moviesListe.filter(el=>el.title.toLowerCase().includes(keyWord.toLowerCase().trim())&& el.rating>=rating)} setMoviesListe={setMoviesListe}/> 
     
     </div>
   );
