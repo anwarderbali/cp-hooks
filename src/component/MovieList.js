@@ -1,22 +1,24 @@
 import React from "react";
 import MovieCard from "./MovieCard";
-import "./List.css";
 import Addmovie from "./Addmovie";
 const MovieList = ({moviesListe , setMoviesListe}) => {
 
   const addNewMovie = (data) => {
     setMoviesListe([...moviesListe, data]);
+    console.log(moviesListe)
 }
 
   const card = moviesListe.map((movie, id) => {
     return (
       <div>
-        <MovieCard movie={movie} key={id} />
+        <MovieCard movie={movie} key={id} /> 
       </div>
     );
 });
-  return <div className="display">{card}<br/>
+  return (
+  <div className="display">{card}<br/>
   <Addmovie addData={addNewMovie}/>
-  </div>;
+  </div>
+  );
 };
 export default MovieList;

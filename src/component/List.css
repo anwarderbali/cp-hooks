@@ -1,9 +1,0 @@
-.display{
-
-        display: grid;
-        grid-template-columns:repeat(3,25%) ;
-        grid-template-rows: repeat(3, 200px);
-        gap: 150px 50px;
-        justify-content: center;
-
-    }

@@ -5,19 +5,28 @@ import StarRatingComponent from 'react-star-rating-component';
 
 const MovieCard = ({ movie }) => {
     return (
-        <div className="movie-card-content">
-            <img src={movie.posterURL} alt="hehe!!" style={{ height: "170px" , width:"330px"}} />
-            <br />
-            {movie.title} <br />
-            {movie.description} <br />
-            <StarRatingComponent
-                name='filter' 
-                starCount={10}
-                emptyStarColor={String}
-                value={movie.rating}
-    
-/><br />
+
+        <div className="movie_card" id="bright">
+            <div className="info_section">
+                <div className="movie_header">
+                    <img className="locandina" src={movie.posterURL} />
+                    <h1>{movie.title} </h1>
+                    <StarRatingComponent
+                        name='filter'
+                        starCount={10}
+                        emptyStarColor={String}
+                        value={movie.rating}
+                    /><br />
+                </div>
+                <div className="movie_desc">
+                    <h1 className="text">
+                        {movie.description}
+                    </h1>
+                </div>
+
+            </div>
         </div>
+
     );
 };
 

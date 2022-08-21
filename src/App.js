@@ -3,28 +3,24 @@ import Filter from "./component/Filter";
 import MovieList from "./component/MovieList";
 import {useState} from 'react'
 
-
-
 function App() {
 
   const [keyWord , setKeyWord] = useState ("")
   const [rating , setRating] = useState(1)
-  const [moviesListe, setMoviesListe] = useState([ {
+  const [moviesListe, setMoviesListe] = useState([ 
+    {
     id: 1,
     title: "Cinderella",
-    description:
-      "description:American animated film, released in 1950, that was made by Walt Disney and was based on the fairy tale by Charles Perrault. . ",
-    posterURL: "https://i.ytimg.com/vi/IxNjzJ5uGTU/maxresdefault.jpg",
-    rating: 9,
+    description:"description:American animated film, released in 1950, that was made by Walt Disney and was based on the fairy tale by Charles Perrault. . ",
+    posterURL:  "https://i.ytimg.com/vi/IxNjzJ5uGTU/maxresdefault.jpg",
+    rating: 1,
   },
   {
     id: 2,
     title: "The Lion King",
-    description:
-      "Few animated films have charged onto the screen with the confidence of Disney’s 1994 smash “The Lion King.” Eschewing opening titles, a giant red sun rising over the Serengeti filled the screen, as the soundtrack blasted the majestic opening song, “The Circle of Life.”",
-    posterURL:
-      "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1548893746-51kT05ugyOL.jpg?crop=0.889xw:1xh;center,top&resize=480:*",
-    rating: 8,
+    description: "Few animated films have charged onto the screen with the confidence of Disney’s 1994 smash “The Lion King.” Eschewing opening titles, a giant red sun rising over the Serengeti filled the screen, as the soundtrack blasted the majestic opening song, “The Circle of Life.”",
+    posterURL:"https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1548893746-51kT05ugyOL.jpg?crop=0.889xw:1xh;center,top&resize=480:*",
+    rating: 3,
   },
   {
     id: 3,
@@ -54,7 +50,6 @@ function App() {
     <div className="App">
       <Filter search={search} handleRating={handleRating} />
       <MovieList moviesListe={moviesListe.filter(el=>el.title.toLowerCase().includes(keyWord.toLowerCase().trim())&& el.rating>=rating)} setMoviesListe={setMoviesListe}/> 
-    
     </div>
   );
 }
